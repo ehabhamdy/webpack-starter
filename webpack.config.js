@@ -1,8 +1,10 @@
 const path = require("path")
 const webpack = require("webpack")
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
-    mode: 'development',
+    mode: 'production',
     entry: './src/client/index.js',
     module: {
         rules: [
@@ -23,7 +25,13 @@ module.exports = {
                 test: /\.css$/i,
                 use: ["style-loader", "css-loader"],
               }
-    ]
-    } 
-    
+        ]
+    },
+    plugins: [
+      new HtmlWebpackPlugin({
+        template: "./src/client/views/index.html",
+        filename: './index.html'
+      }),
+      // new BundleAnalyzerPlugin(),
+  ],
 }
