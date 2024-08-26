@@ -1,4 +1,6 @@
 import { handleSubmit } from './js/formHandler';
+import { checkForName } from './js/nameChecker';
+
 import webpack from './assets/webpack.png';
 
 import "./styles/resets.css";
@@ -18,4 +20,7 @@ img.height = 200; // Example: set height to 200px
 var resultDiv = document.getElementById('results');
 resultDiv.appendChild(img);
 
-// alert("I EXIST")
+export {
+    handleSubmit, 
+    checkForName
+}

@@ -11,6 +11,8 @@ module.exports = {
     output: {
       path: path.resolve(__dirname, 'dist'),
       filename: 'main.bundle.js',
+      libraryTarget: 'var',
+      library: 'Client' 
     },
     devServer: {
       static: {
